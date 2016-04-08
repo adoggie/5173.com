@@ -1,0 +1,26 @@
+<gtr_monitor>	
+	<server port="4402">		
+		<regex>
+			<r>hex\w*</r>
+		</regex>
+	</server>
+	<robot port="4401" port2="4403"/>
+	
+	<offline_interval>10</offline_interval>
+	<dbserver host=""  port="4401" dns=""/>
+	<buffer_lines>200</buffer_lines>
+	<robots>
+		<group name="Robot Group 1.">
+			<robot name="Robot-A" ip="192.168.33.159" gamepath="c:\" >
+				<regex>
+				 
+				</regex>
+			</robot>
+			<robot name="Robot-B" ip="192.168.33.102" />
+		</group>
+		<group name="Robot Group 2.">
+			<robot name="Robot-C" ip="192.168.33.103" />
+			<robot name="Robot-D" ip="192.168.33.104" />
+		</group>
+	</robots>
+</gtr_monitor>

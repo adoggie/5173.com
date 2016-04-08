@@ -1,0 +1,36 @@
+#include "upx.h"
+#include <QSqlQuery>
+#include <QSqlQueryModel> 
+#include <QSqlDatabase> 
+#include <QMessageBox> 
+#include <QTextcodec> 
+
+upx::upx(QWidget *parent, Qt::WFlags flags)
+	: QMainWindow(parent, flags)
+{
+	ui.setupUi(this);
+	
+	QSqlDatabase db = QSqlDatabase::addDatabase("QSQLITE"); 
+	db.setDatabaseName("c:/userver.db");
+	if ( !db.open()){
+		QMessageBox::critical(NULL, QObject::tr("Collection"), QObject::tr("????¬ù¬¨????"));
+		 
+	} 
+	QSqlQuery query("SELECT howto FROM userver_main where key='userver_id';");
+	while (query.next()) {
+		QString text=QObject::tr("√¿¿ˆ");
+		QString country =QString::fromUtf8( query.value(0).toByteArray().data());
+		//QString country =query.value(0).toString();
+		//doSomething(country);
+		//QTextCodec * BianMa = QTextCodec::codecForName ( "utf8" );
+		//ui.edtHostGrpName->setText(text);
+
+	}
+	QMessageBox::critical(NULL,QObject::tr("√¿¿ˆ"),QObject::tr("dsfsdf"));
+	
+}
+
+upx::~upx()
+{
+
+}

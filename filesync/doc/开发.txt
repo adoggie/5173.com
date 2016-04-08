@@ -1,0 +1,16 @@
+环境:
+===========
+vs2008 crt,
+python 2.6 , 
+ice 3.3.1
+
+系统设计
+================
+系统分 endpoint和server两部分，endpoint是分发游戏介质的游戏终端设备
+endpoint启动5000作为服务端口,通信采用rpc的ice协议
+当server启动同步时，必须先通过server.exe digest 先产生本地文件摘要，然后server.exe update
+执行更新; 更新时server请求目标主机下发远端主机目录清单，然后进行比对，再根据文件差异完成
+与远端主机的文件同步工作
+文件传输时必须切片处理，防止数据包过大
+调节server.conf::workthread参数来控制并发同步的数量
+

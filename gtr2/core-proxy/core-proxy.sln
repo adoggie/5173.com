@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "core-proxy", "core-proxy.vcproj", "{A7C7822D-7957-4288-AB6E-5A94A3446E07}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7C7822D-7957-4288-AB6E-5A94A3446E07}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A7C7822D-7957-4288-AB6E-5A94A3446E07}.Debug|Win32.Build.0 = Debug|Win32
+		{A7C7822D-7957-4288-AB6E-5A94A3446E07}.Release|Win32.ActiveCfg = Release|Win32
+		{A7C7822D-7957-4288-AB6E-5A94A3446E07}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

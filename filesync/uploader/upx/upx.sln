@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "upx", "upx.vcproj", "{2909B9EA-49BE-4B72-B3E3-32D261B4B7C5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "interview", "C:\Qt\4.6.1\demos\interview\interview.vcproj", "{52201A90-2519-3D4C-988B-2B5D89656F00}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2909B9EA-49BE-4B72-B3E3-32D261B4B7C5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2909B9EA-49BE-4B72-B3E3-32D261B4B7C5}.Debug|Win32.Build.0 = Debug|Win32
+		{2909B9EA-49BE-4B72-B3E3-32D261B4B7C5}.Release|Win32.ActiveCfg = Release|Win32
+		{2909B9EA-49BE-4B72-B3E3-32D261B4B7C5}.Release|Win32.Build.0 = Release|Win32
+		{52201A90-2519-3D4C-988B-2B5D89656F00}.Debug|Win32.ActiveCfg = Debug|Win32
+		{52201A90-2519-3D4C-988B-2B5D89656F00}.Debug|Win32.Build.0 = Debug|Win32
+		{52201A90-2519-3D4C-988B-2B5D89656F00}.Release|Win32.ActiveCfg = Release|Win32
+		{52201A90-2519-3D4C-988B-2B5D89656F00}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

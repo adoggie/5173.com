@@ -1,0 +1,2 @@
+instlsp install
+pause

@@ -1,0 +1,39 @@
+1.安装vcredist_x86.exe
+2.拷贝release/bin,etc,lib到客户机的安装目录
+3.运行bin/endpoint.exe 即可
+
+配置
+==============
+etc/
+	jerry.conf  -  endpoint 系统的配置参数
+	server.conf - 	server系统的配置参数
+	hosts.list  - 	游戏客户机主机的ip地址列表
+
+digest.md5	当执行 sync_server.exe update 产生的目录文件摘要信息
+hosts.list 	主机列表文件，每一行定义一个ip和游戏名称，
+		格式: ip,Game-A 
+		一台主机只能运行一款游戏
+digest.md5	存在于游戏存储的根目录，每一行表示一个文件，
+		格式： filename*filesize*md5_digest
+
+
+RobotSetting.conf  配置在游戏根目录下，文件定义了游戏机器人的相关信息
+	GameProcess=Dnf.exe,crack.exe  游戏使用的相关进程，在停止游戏时将终止这些进程，以,分隔
+	RobotPath=robot/robot.exe  游戏运行的执行程序名称，只能携带游戏目录下的相对路径
+
+运行
+===============
+sync_server.exe [digest|update|startgame|endgame|excbat] [hosts]
+  digest - 计算本地文件摘要
+  update - 执行文件同步
+  startgame - 加载游戏运行
+  endgame - 终止游戏
+  excbat hosts   - 执行远程文件
+  	 hosts 文件格式: xxx.xxx.xxx.xxx,exeute_file
+  	  每一行定义一台主机和执行程序名称
+  
+
+server.conf
+========================
+适当调整workthreadnum的数量，并打开数据压缩选项 Ice.Override.Compress=1
+可以提高并行更新的速度，但要求本地主机的运算能力

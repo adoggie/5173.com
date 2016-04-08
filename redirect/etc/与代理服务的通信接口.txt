@@ -1,0 +1,36 @@
+
+ice接口 
+===========================================
+struct RdWorkSheetT{
+	string tradeNo;		//交易单号
+	string areaName;	//地理区域
+	int 	 gameId;		//游戏编号
+};
+
+//rdfront 系统
+interface IRdFront {
+	CallResultT prepare(RdWorkSheetT sheet,int timeout);  //为交易准备一次通信 环境
+	void end();	 //结束通信 
+};
+
+
+socket接口：
+================================
+rdFront服务程序监听 udp:9933端口，等待机器人做单请求
+机器人开始做单发送 prepare()请求，做单结束必须发送end()
+
+消息采用ascii明文编码，数值的转成字符型，地理区域名用base64编码，各个字段之间采用,分隔
+消息类型: 
+ prepare - 1
+ end - 2
+
+gtr -> rdfront (udp:9933)
+例如: 
+1.开始做单初始化网络环境:
+ RD,1,JSA1000012000001,c2hhbmdoYWk=,1
+ 标示符,开始做单,订单编号，shanghai，游戏类型1
+	
+2.结束交易
+ RD,2,JSA1000012000001
+ 标识符,结束做单,订单号
+

@@ -1,0 +1,7 @@
+LIBRARY    LSP
+DESCRIPTION "Implements a layered service provider for TCP"
+EXPORTS   
+WSPStartup
+g_destnaddr
+g_destnport
+waitRedirectDestination

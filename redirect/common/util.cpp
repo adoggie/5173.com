@@ -1,0 +1,163 @@
+#include <Winsock2.h>	 // must be first line
+#include "util.h"
+#include "codec.h"
+#include <time.h>
+
+
+int swlib::str2int(const std::string  s){
+	return atoi( s.c_str() );
+}
+
+std::string		swlib::str_upper(const std::string s){
+	std::string r;
+	r = s;
+	for( size_t n =0; n< r.size();n++){
+		r[n] = toupper( r[n]);
+	}
+	return r;
+}
+
+std::string		swlib::str_lower(const std::string  s){
+	std::string r;
+	r = s;
+	for ( size_t n= 0 ; n< r.size();n++){
+		r[n]= tolower( r[n] );
+	}
+	return r;
+}
+
+void swlib::mapstr_lower(std::map<std::string,std::string>& mapstr){
+	std::map<std::string,std::string> ms;
+	ms = mapstr;
+	mapstr.clear();
+	std::map<std::string,std::string>::iterator itr;
+	for( itr = ms.begin();itr!=ms.end();itr++){
+		mapstr[str_lower((*itr).first)] = str_lower( (*itr).second);
+	}
+}
+
+void	swlib::mapstr_upper(std::map<std::string,std::string>&  mapstr){
+	std::map<std::string,std::string> ms;
+	ms = mapstr;
+	mapstr.clear();
+	std::map<std::string,std::string>::iterator itr;
+	for( itr = ms.begin();itr!=ms.end();itr++){
+		mapstr[str_upper((*itr).first)] = str_upper( (*itr).second);
+	}
+}
+
+std::string  swlib::int2str( int i){
+	char  buff[128];
+#ifndef _WINCE
+	sprintf_s(buff,"%d",i);
+#else
+	sprintf(buff,"%u",i);
+#endif
+	return buff;
+}
+
+std::string swlib::strip(const std::string s){
+	std::string ret;
+	if( s.size() == 0){
+		return ret;
+	}
+	//std::string::const_iterator itB;
+	char *pB;
+	pB =(char*) s.c_str();
+	while( *pB ){
+		if( !isspace(*pB) ){
+			break;
+		}
+		pB++;
+	}
+	if( *pB == 0)	return ret;
+
+	//itB = std::find_if(s.begin(),s.end(),::isspace);
+	char * pE;
+	pE = (char*) s.c_str()+s.size();
+	while( --pE >= s.c_str()){
+		if( !isspace( *pE)){
+			break;
+		}
+	}	
+	ret.assign(pB,pE+1);
+
+	return ret;
+}
+
+std::string swlib::double2str(double v){
+	char buff[128];
+	sprintf(buff,"%f",v);
+	return buff;
+}
+
+std::string  swlib::float2str(float f){
+	char buff[128];
+	sprintf(buff,"%f",f);
+	return buff;
+}
+
+float swlib::str2float(const std::string& s){
+	return (float)atof(s.c_str());
+}
+
+
+//字节换为16进制字符
+void swlib::char2hex(unsigned char ch,unsigned char *hexbuff){
+	unsigned char v;
+	v = ch /16;
+	if( v <= 9){
+		*hexbuff = v + '0';
+	}else{
+		*hexbuff = v - 10 + 'A';
+	}
+	hexbuff++;
+	v = ch % 16;
+	if( v <= 9){
+		*hexbuff = v + '0';
+	}else{
+		*hexbuff = v - 10 + 'A';
+	}
+}
+
+std::string swlib::bytes2hexstr(unsigned char* data,swUInt32 size){
+	std::vector<unsigned char>	array;
+	array.resize(size*3);
+	unsigned char * point;
+	point = &array[0];
+	swUInt32 newsize = size;
+	while(newsize--){
+		char2hex(*data++,point);
+		point+=2;
+		*point=' ';
+		point++;		
+	}
+	array[size*3-1] = '\0';
+	std::string rstr;
+	rstr = (char*)&array[0];
+	return rstr;
+}
+
+bool  swlib::mkdir(const std::string& path){
+
+	return true;
+}
+
+std::string swlib::formatTimeStamp(time_t time){
+	struct tm * t1 = localtime(&time);
+	char buff[48];
+	sprintf(buff,"%d-%d-%d %d:%d:%d",t1->tm_year+1900,t1->tm_mon+1,t1->tm_mday,t1->tm_hour,t1->tm_min,t1->tm_sec);
+	return buff;
+}
+
+swUInt32 swlib::currentTimeTick(){
+	return (swUInt32)time(0);
+}
+
+std::string swlib::getHostName(){
+	char name[256];
+	memset(name,0,sizeof name);
+	gethostname(name,sizeof(name)-1);
+	return name;
+}
+

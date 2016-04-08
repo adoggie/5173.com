@@ -1,0 +1,36 @@
+<gtr_monitor>	
+	<server port="13000">		
+		<regex>
+			<r>hex\w*</r>
+		</regex>
+	</server>
+	<robot port="12345" port2="12347"/>
+	<bakLogServer ip="GTR-RICHARD\SQLEXPRESS" catalog="GTR_RobotLog" userId="sa" pw="p@ssword" />
+	<offline_interval>20</offline_interval>
+	<dbserver host=""  port="4401" dns=""/>
+	<buffer_lines>50</buffer_lines>
+	<robots>
+		<group name="dnf">
+			<robot name="192.168.36.106" ip="192.168.36.106" gamepath="d:\game\dnf"  >
+				<regex> 
+				</regex>
+			</robot>
+			<robot name="192.168.36.107" ip="192.168.36.107" gamepath="d:\game\dnf"/>
+			<robot name="192.168.36.108" ip="192.168.36.108" gamepath="d:\game\dnf" />
+			<robot name="127.0.0.1" ip="127.0.0.1" gamepath="d:\game\dnf" />
+		</group>
+		
+		<group name="wmgj">
+			<robot name="192.168.36.101" ip="192.168.36.101" gamepath="d:\game\wmgj" />
+			<robot name="192.168.36.102" ip="192.168.36.102" gamepath="d:\game\wmgj" />
+            <robot name="192.168.36.103" ip="192.168.36.103" gamepath="d:\game\wmgj"  />
+            <robot name="192.168.36.104" ip="192.168.36.104" gamepath="d:\game\wmgj"  />
+		</group>
+		
+		<group name="yhzt">
+			<robot name="192.168.36.111" ip="192.168.36.111" gamepath="d:\game\yhzt"  />
+			<robot name="192.168.36.112" ip="192.168.36.112" gamepath="d:\game\yhzt" />
+			<robot name="192.168.36.113" ip="192.168.36.113" gamepath="d:\game\yhzt" />
+		</group>
+	</robots>
+</gtr_monitor>

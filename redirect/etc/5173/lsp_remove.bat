@@ -1,0 +1,2 @@
+instlsp remove
+pause

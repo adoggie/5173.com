@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>upxClass</class>
+ <widget class="QMainWindow" name="upxClass">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>566</width>
+    <height>362</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>upx</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>4</y>
+      <width>565</width>
+      <height>317</height>
+     </rect>
+    </property>
+    <property name="sizeIncrement">
+     <size>
+      <width>23</width>
+      <height>23</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="tabPosition">
+     <enum>QTabWidget::North</enum>
+    </property>
+    <property name="tabShape">
+     <enum>QTabWidget::Rounded</enum>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="tab">
+     <attribute name="title">
+      <string>主机管理</string>
+     </attribute>
+     <widget class="QListWidget" name="listHostGroup">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>32</y>
+        <width>185</width>
+        <height>191</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="listHosts">
+      <property name="geometry">
+       <rect>
+        <x>208</x>
+        <y>32</y>
+        <width>325</width>
+        <height>192</height>
+       </rect>
+      </property>
+      <property name="selectionMode">
+       <enum>QAbstractItemView::ExtendedSelection</enum>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+      <property name="modelColumn">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnAddHostGroup">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>260</y>
+        <width>60</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>新增</string>
+      </property>
+      <property name="flat">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnAddHost">
+      <property name="geometry">
+       <rect>
+        <x>408</x>
+        <y>260</y>
+        <width>60</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>添加</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnUpdateHostGroup">
+      <property name="geometry">
+       <rect>
+        <x>76</x>
+        <y>260</y>
+        <width>60</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>修改</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>224</x>
+        <y>236</y>
+        <width>54</width>
+        <height>12</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>地址</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="edtHostAddr1">
+      <property name="geometry">
+       <rect>
+        <x>260</x>
+        <y>230</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="inputMask">
+       <string>000.000.000.000;_</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="edtHostAddr2">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>230</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="inputMask">
+       <string>000.000.000.000;_</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_3">
+      <property name="geometry">
+       <rect>
+        <x>384</x>
+        <y>236</y>
+        <width>54</width>
+        <height>12</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial Narrow</family>
+        <pointsize>12</pointsize>
+        <weight>75</weight>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>&lt;-&gt;</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnDelHost">
+      <property name="geometry">
+       <rect>
+        <x>472</x>
+        <y>260</y>
+        <width>60</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>删除</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>16</y>
+        <width>54</width>
+        <height>12</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(85, 0, 255);</string>
+      </property>
+      <property name="text">
+       <string>组名</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>204</x>
+        <y>16</y>
+        <width>54</width>
+        <height>12</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 85, 0);</string>
+      </property>
+      <property name="text">
+       <string>主机列表</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="edtHostGrpName">
+      <property name="geometry">
+       <rect>
+        <x>44</x>
+        <y>232</y>
+        <width>145</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>236</y>
+        <width>54</width>
+        <height>12</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>名称</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnDelHostGroup">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>260</y>
+        <width>60</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>删除</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnRebootHost">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>8</y>
+        <width>65</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>重启主机</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_3">
+     <attribute name="title">
+      <string>游戏资源</string>
+     </attribute>
+     <widget class="QPushButton" name="btnCalcDigest">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>260</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>计算MD5摘要</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>4</x>
+        <y>208</y>
+        <width>54</width>
+        <height>12</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>游戏名称</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="edtGameName">
+      <property name="geometry">
+       <rect>
+        <x>68</x>
+        <y>204</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_8">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>208</y>
+        <width>73</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>游戏文件目录</string>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="edtLocalPath">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>204</y>
+        <width>233</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnAddGame">
+      <property name="geometry">
+       <rect>
+        <x>8</x>
+        <y>260</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>添加</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnUpdateGame">
+      <property name="geometry">
+       <rect>
+        <x>88</x>
+        <y>260</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>修改</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnDelGame">
+      <property name="geometry">
+       <rect>
+        <x>172</x>
+        <y>260</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>删除</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnSelectPath">
+      <property name="geometry">
+       <rect>
+        <x>516</x>
+        <y>200</y>
+        <width>25</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>?</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>236</y>
+        <width>73</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>游戏远程目录</string>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="edtRemotePath">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>232</y>
+        <width>233</width>
+        <height>20</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QTableWidget" name="listGames">
+      <property name="geometry">
+       <rect>
+        <x>8</x>
+        <y>4</y>
+        <width>545</width>
+        <height>192</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> </string>
+      </property>
+      <property name="selectionBehavior">
+       <enum>QAbstractItemView::SelectRows</enum>
+      </property>
+      <property name="showGrid">
+       <bool>true</bool>
+      </property>
+      <property name="cornerButtonEnabled">
+       <bool>true</bool>
+      </property>
+      <property name="rowCount">
+       <number>0</number>
+      </property>
+      <property name="columnCount">
+       <number>4</number>
+      </property>
+      <column/>
+      <column/>
+      <column/>
+      <column/>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_2">
+     <attribute name="title">
+      <string>控制</string>
+     </attribute>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>4</y>
+        <width>54</width>
+        <height>12</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>游戏</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnRefresh">
+      <property name="geometry">
+       <rect>
+        <x>288</x>
+        <y>16</y>
+        <width>269</width>
+        <height>69</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>刷新</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnGameAddHost">
+      <property name="geometry">
+       <rect>
+        <x>284</x>
+        <y>92</y>
+        <width>145</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>添加主机</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnGameDelHost">
+      <property name="geometry">
+       <rect>
+        <x>436</x>
+        <y>92</y>
+        <width>117</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>删除主机</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnStopGame">
+      <property name="geometry">
+       <rect>
+        <x>284</x>
+        <y>136</y>
+        <width>145</width>
+        <height>37</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>停止游戏</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnStartGame">
+      <property name="geometry">
+       <rect>
+        <x>436</x>
+        <y>136</y>
+        <width>117</width>
+        <height>37</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>开启游戏</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnFileDiffer">
+      <property name="geometry">
+       <rect>
+        <x>284</x>
+        <y>176</y>
+        <width>145</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>远程文件比对</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnFileSync">
+      <property name="geometry">
+       <rect>
+        <x>284</x>
+        <y>220</y>
+        <width>145</width>
+        <height>57</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>游戏文件同步</string>
+      </property>
+     </widget>
+     <widget class="QCheckBox" name="cbxCheck">
+      <property name="geometry">
+       <rect>
+        <x>432</x>
+        <y>260</y>
+        <width>117</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>同步之进行校验</string>
+      </property>
+     </widget>
+     <widget class="QTreeWidget" name="treeGames">
+      <property name="geometry">
+       <rect>
+        <x>8</x>
+        <y>20</y>
+        <width>269</width>
+        <height>261</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string notr="true">1</string>
+       </property>
+      </column>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>系统设置</string>
+     </attribute>
+     <widget class="QLabel" name="label">
+      <property name="geometry">
+       <rect>
+        <x>28</x>
+        <y>40</y>
+        <width>54</width>
+        <height>12</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>通信端口</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="edtCommPort">
+      <property name="geometry">
+       <rect>
+        <x>96</x>
+        <y>36</y>
+        <width>113</width>
+        <height>20</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>5000</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnSettingsSave">
+      <property name="geometry">
+       <rect>
+        <x>28</x>
+        <y>84</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>保存</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="widget">
+     <attribute name="title">
+      <string>运行日志</string>
+     </attribute>
+     <widget class="QTextEdit" name="txtLogMessage">
+      <property name="geometry">
+       <rect>
+        <x>8</x>
+        <y>8</y>
+        <width>541</width>
+        <height>237</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="btnSaveToFile">
+      <property name="geometry">
+       <rect>
+        <x>12</x>
+        <y>252</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>保存到文件</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>566</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="action"/>
+   </widget>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="action">
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="upx.qrc"/>
+ </resources>
+ <connections/>
+</ui>
